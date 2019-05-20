@@ -8,11 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>알파리의 홈화면</title>
-
+    <title>알파리의 홈페이지에 오신걸 환영합니다.</title>
 </head>
 <body>
-<h1>${message}</h1>
-<h2>${version}</h2>
+
+
+<button type="button" onclick="location.href='./member/signup/'">회원가입</button>
+
+
 </body>
 </html>
