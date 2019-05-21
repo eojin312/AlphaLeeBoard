@@ -24,6 +24,6 @@
 <p class="message">축하합니다 고객님 회원님의 고객번호는 ${alphaLeeBoardUser.alno} 입니다.</p>
 <p class="message">축하합니다 고객님 회원님의 아이디는 ${alphaLeeBoardUser.id} 입니다.</p>
 <p class="message_email">이메일은 ${alphaLeeBoardUser.email} 입니다.</p>
-<button type="button" onclick="location.href='http://localhost:8080/alphalee/board/list'">홈으로가기</button>
+<button type="button" onclick="location.href='http://localhost:8080/alphalee/'">홈으로가기</button>
 </body>
 </html>

@@ -22,4 +22,14 @@
         <servlet-name>SingUpMemberProcessorServlet</servlet-name>
         <url-pattern>/alphalee/member/signup/process</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>WriteServlet</servlet-name>
+        <servlet-class>servlet.Write</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WriteServlet</servlet-name>
+        <url-pattern>/alphalee/member/write/</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>앒</title>
+    <title>알파리</title>
 </head>
 <body>
 <form action="/alphalee/member/signup/process" method="post">

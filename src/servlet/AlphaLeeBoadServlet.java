@@ -15,7 +15,7 @@ public class AlphaLeeBoadServlet extends HttpServlet {
         req.setAttribute("message", "안녕하세요 알파리 게시판입니다.");
         req.setAttribute("version", "V1.0");
         //jsp 연결
-        RequestDispatcher view = req.getRequestDispatcher("/board/index.jsp");
+        RequestDispatcher view = req.getRequestDispatcher("/board/write.jsp");
         view.forward(req, res);
     }
 
