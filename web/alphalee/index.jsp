@@ -41,6 +41,18 @@
     글쓰기
 </button>
 
+<table border="1">
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>생성날짜</th>
+    </tr>
+    <tr>
+        <td>${article.articleNo}</td>
+        <td>${article.title}</td>
+        <td>${article.createDate}</td>
+    </tr>
+</table>
 
 </body>
 </html>
