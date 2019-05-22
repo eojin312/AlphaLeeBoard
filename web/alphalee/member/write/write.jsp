@@ -18,8 +18,14 @@
             <td><input type="text" name="writer"></td>
         </tr>
         <tr>
+            <td>글 제목</td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
             <td>내용</td>
-            <td><textarea name="contents" style="width: 500px;"></textarea></td>
+            <td><textarea name="contents" style="width: 500px;"
+                          style="height: 500px;"></textarea>
+            </td>
         </tr>
     </table>
     <input type="submit" name="write-button" value="글 올리기">

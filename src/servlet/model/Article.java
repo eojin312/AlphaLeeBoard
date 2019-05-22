@@ -10,6 +10,7 @@ package servlet.model;
 //        );
 public class Article {
     private long articleNo;
+    private String title;
     private String writer;
     private String contents;
     private String createDate;
@@ -17,7 +18,8 @@ public class Article {
     private long readCount;
     private long recommendCount;
 
-    public Article(long articleNo, String writer, String contents, String createDate, String updateDate, long readCount, long recommendCount) {
+    public Article(long articleNo, String writer, String contents, String createDate, String updateDate, long readCount, long recommendCount, String title) {
+        this.title = title;
         this.articleNo = articleNo;
         this.writer = writer;
         this.contents = contents;
@@ -27,11 +29,16 @@ public class Article {
         this.recommendCount = recommendCount;
     }
 
-    public Article(long articleNo, String writer, String contents, String createDate) {
+    public Article(long articleNo, String writer, String title, String contents, String createDate) {
+        this.title = title;
         this.articleNo = articleNo;
         this.writer = writer;
         this.contents = contents;
         this.createDate = createDate;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public long getArticleNo() {
@@ -43,12 +50,9 @@ public class Article {
     }
 
     public String getContents() {
-        return contents;
-    }
-
-    public String getContentsConvertedWithBr() {
         return contents.replaceAll("\r\n", "<br>");
     }
+
 
     public String getCreateDate() {
         return createDate;
@@ -70,6 +74,7 @@ public class Article {
     public String toString() {
         return "Article{" +
                 "articleNo=" + articleNo +
+                ", title='" + title + '\'' +
                 ", writer='" + writer + '\'' +
                 ", contents='" + contents + '\'' +
                 ", createDate='" + createDate + '\'' +
@@ -78,5 +83,4 @@ public class Article {
                 ", recommendCount=" + recommendCount +
                 '}';
     }
-
 }

@@ -1,8 +1,6 @@
 package servlet;
 
 import servlet.model.Article;
-import servlet.model.WriterModel;
-import sun.reflect.annotation.ExceptionProxy;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 public class Write extends HttpServlet {
@@ -23,6 +20,7 @@ public class Write extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         String writer = req.getParameter("writer");
+        String title = req.getParameter("title");
         String contents = req.getParameter("contents");
 
         Connection conn = null;
@@ -43,9 +41,11 @@ public class Write extends HttpServlet {
         }
 
         try {
-            pstmt = conn.prepareStatement("insert into article (writer, contents, create_date, update_date) values (? ,?, now(), now())", Statement.RETURN_GENERATED_KEYS);
+            pstmt = conn.prepareStatement("insert into article (writer, title,  contents, create_date, update_date) values (? ,?, ?, now(), now())", Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, writer);
-            pstmt.setString(2, contents);
+            pstmt.setString(2, title);
+            pstmt.setString(3,contents);
+
             int rows = pstmt.executeUpdate();
 
             if (rows != 1) {
@@ -62,7 +62,7 @@ public class Write extends HttpServlet {
                 view.forward(req, res);
             }
 
-            pstmt = conn.prepareStatement("select article_no, writer, contents, create_date from article where article_no = ?");
+            pstmt = conn.prepareStatement("select article_no, writer, title, contents, create_date from article where article_no = ?");
             pstmt.setLong(1, lastInsertedArticleNo);
             ResultSet rs = pstmt.executeQuery();
 
@@ -70,10 +70,11 @@ public class Write extends HttpServlet {
 //                WriterModel writerModel = new WriterModel(rs.getInt("wtno"), rs.getString("name"), rs.getString("writing"));
                 long _articleNo = rs.getLong("article_no");
                 String _writer = rs.getString("writer");
+                String _title = rs.getString("title");
                 String _contents = rs.getString("contents");
                 String _createDate = rs.getString("create_date");
 
-                Article article = new Article(_articleNo, _writer, _contents, _createDate);
+                Article article = new Article(_articleNo, _writer, _title, _contents, _createDate);
                 req.setAttribute("article", article);
                 RequestDispatcher view = req.getRequestDispatcher("/alphalee/member/write/wt-complete.jsp");
                 view.forward(req, res);

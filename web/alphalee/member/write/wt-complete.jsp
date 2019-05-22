@@ -17,16 +17,16 @@
         <td>${article.articleNo}</td>
     </tr>
     <tr>
+        <td>제목</td>
+        <td>${article.title}</td>
+    </tr>
+    <tr>
         <td>작성자</td>
         <td>${article.writer}</td>
     </tr>
     <tr>
         <td>내용</td>
         <td>${article.contents}</td>
-    </tr>
-    <tr>
-        <td>내용</td>
-        <td>${article.contentsConvertedWithBr}</td>
     </tr>
     <tr>
         <td>작성일</td>
