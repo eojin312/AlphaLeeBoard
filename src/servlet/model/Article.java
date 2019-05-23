@@ -18,6 +18,9 @@ public class Article {
     private long readCount;
     private long recommendCount;
 
+    public Article() {
+    }
+
     public Article(long articleNo, String writer, String contents, String createDate, String updateDate, long readCount, long recommendCount, String title) {
         this.title = title;
         this.articleNo = articleNo;

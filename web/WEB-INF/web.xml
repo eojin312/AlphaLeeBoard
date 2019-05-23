@@ -35,5 +35,14 @@
         <url-pattern>/alphalee/board/list</url-pattern>
     </servlet-mapping>
 
+    <!--게시판 글 목록 조회-->
+    <servlet>
+        <servlet-name>Detail</servlet-name>
+        <servlet-class>servlet.DetailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Detail</servlet-name>
+        <url-pattern>/alphalee/board/detail</url-pattern>
+    </servlet-mapping>
 
 </web-app>

@@ -21,7 +21,7 @@
 <c:forEach var="article" items="${articleList}">
     <tr>
         <td>${article.articleNo}</td>
-        <td>${article.title}</td>
+        <td><a href="/alphalee/board/detail?article_no=${article.articleNo}">${article.title}</a></td>
         <td>${article.writer}</td>
     </tr>
 </c:forEach>
