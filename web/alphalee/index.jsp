@@ -32,6 +32,12 @@
 <body>
 <h2 class="title">알파리</h2>
 
+<ul>
+    <li><a href="/member/signup/">회원가입</a></li>
+    <li><a href="/alphalee/board/list">게시판</a></li>
+</ul>
+<a href=""></a>
+
 <button type="button" onclick="location.href='./member/signup/'" class="signup">
     회원가입
 </button>
@@ -41,18 +47,6 @@
     글쓰기
 </button>
 
-<table border="1">
-    <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>생성날짜</th>
-    </tr>
-    <tr>
-        <td>${article.articleNo}</td>
-        <td>${article.title}</td>
-        <td>${article.createDate}</td>
-    </tr>
-</table>
 
 </body>
 </html>

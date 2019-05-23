@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 
-public class Write extends HttpServlet {
+public class WriteServlet extends HttpServlet {
 
     public static final String DB_PWD = "dldjwls02";
     public static final String DB_ID = "root";
     public static final String DB_URL = "jdbc:mysql://localhost:3306/alphaleeboard?useSSL=false";
+    public static final String FAIL_JSP = "/alphalee/board/write/wt-fail.jsp";
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
@@ -49,7 +50,7 @@ public class Write extends HttpServlet {
             int rows = pstmt.executeUpdate();
 
             if (rows != 1) {
-                RequestDispatcher view = req.getRequestDispatcher("/alphalee/member/write/wt-fail.jsp");
+                RequestDispatcher view = req.getRequestDispatcher(FAIL_JSP);
                 view.forward(req, res);
             }
 
@@ -58,7 +59,7 @@ public class Write extends HttpServlet {
             if (rs4Key.next()) {
                 lastInsertedArticleNo = rs4Key.getLong(1);
             } else {
-                RequestDispatcher view = req.getRequestDispatcher("/alphalee/member/write/wt-fail.jsp");
+                RequestDispatcher view = req.getRequestDispatcher(FAIL_JSP);
                 view.forward(req, res);
             }
 
@@ -76,10 +77,10 @@ public class Write extends HttpServlet {
 
                 Article article = new Article(_articleNo, _writer, _title, _contents, _createDate);
                 req.setAttribute("article", article);
-                RequestDispatcher view = req.getRequestDispatcher("/alphalee/member/write/wt-complete.jsp");
+                RequestDispatcher view = req.getRequestDispatcher("/alphalee/board/write/wt-complete.jsp");
                 view.forward(req, res);
             } else {
-                RequestDispatcher view = req.getRequestDispatcher("/alphalee/member/write/wt-fail.jsp");
+                RequestDispatcher view = req.getRequestDispatcher(FAIL_JSP);
                 view.forward(req, res);
             }
         } catch (SQLException e) {

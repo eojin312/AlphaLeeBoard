@@ -37,6 +37,16 @@ public class Article {
         this.createDate = createDate;
     }
 
+    public Article(long articleNo, String title, String writer, String createDate, String updateDate, long readCount, long recommendCount) {
+        this.articleNo = articleNo;
+        this.title = title;
+        this.writer = writer;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
+        this.readCount = readCount;
+        this.recommendCount = recommendCount;
+    }
+
     public String getTitle() {
         return title;
     }

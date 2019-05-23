@@ -11,7 +11,7 @@
     <title>알파리 글적기</title>
 </head>
 <body>
-<form action="/alphalee/member/write/" method="post">
+<form action="/alphalee/board/write" method="post">
     <table border="1">
         <tr>
             <td>작성자</td>
@@ -31,5 +31,8 @@
     <input type="submit" name="write-button" value="글 올리기">
 </form>
 
+<input type="button" onclick="history.back()" value="취소">
+
 </body>
+
 </html>

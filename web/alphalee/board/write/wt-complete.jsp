@@ -34,5 +34,6 @@
     </tr>
 </table>
 <a href="/alphalee">홈으로 가기</a>
+<a href="/alphalee/board/list">글 목록</a>
 </body>
 </html>
