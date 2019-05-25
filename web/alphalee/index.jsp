@@ -14,13 +14,13 @@
             width: 60px;
             height: 30px;
             background-color: bisque;
-            float:right;
+            align-content: center;
         }
         .write {
             width: 60px;
             height: 30px;
             background-color: chartreuse;
-            float:right;
+            align-content: center;
         }
         .title {
             font-size: 40px;
@@ -33,20 +33,16 @@
 <h2 class="title">알파리</h2>
 
 <ul>
-    <li><a href="/member/signup/">회원가입</a></li>
+    <li><a href="./member/signup/">회원가입</a></li>
     <li><a href="/alphalee/board/list">게시판</a></li>
 </ul>
-<a href=""></a>
-
 <button type="button" onclick="location.href='./member/signup/'" class="signup">
     회원가입
 </button>
 
-
-<button type="button" onclick="location.href='./member/write/write.jsp'" class="write">
+<button type="button" onclick="location.href='./board/write/write.jsp'" class="write">
     글쓰기
 </button>
-
 
 </body>
 </html>

@@ -10,9 +10,14 @@
 <html>
 <head>
     <title>알파리 게시판</title>
+    <style>
+        .list {
+            margin-top: 100px;
+        }
+    </style>
 </head>
 <body>
-<table border="1">
+<table border="1" align="center" class="list">
     <tr>
         <th>번호</th>
         <th>글 제목</th>
@@ -26,6 +31,9 @@
     </tr>
 </c:forEach>
 </table>
-<a href="/alphalee/board/write/write.jsp">글쓰기</a>
+    <ul>
+        <li><a href="/">글쓰기</a></li>
+        <li><a href="/alphalee">홈으로 가기</a></li>
+    </ul>
 </body>
 </html>

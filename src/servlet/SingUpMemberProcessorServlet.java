@@ -24,10 +24,35 @@ public class SingUpMemberProcessorServlet extends HttpServlet {
         //캐릭터셋 선언
         req.setCharacterEncoding("utf-8");
 
+        // response 캐릭터셋 설정 + contentType
+        res.setCharacterEncoding("UTF-8");
+        res.setContentType("text/html");
+
         //파라미터 받아오기
         String id = req.getParameter("id");
         String pwd = req.getParameter("pwd");
         String email = req.getParameter("email");
+
+        if (id == null || id.equals("")) {
+            PrintWriter out = res.getWriter();
+            out.println("id를 입력해주세요");
+            out.println("<input type=\"button\" onclick=\"history.back()\" value=\"뒤로\">");
+            return;
+        }
+
+        if (pwd == null || pwd.equals("")) {
+            PrintWriter out = res.getWriter();
+            out.println("비밀번호를 입력해주세요");
+            out.println("<input type=\"button\" onclick=\"history.back()\" value=\"뒤로\">");
+            return;
+        }
+
+        if (email == null || email.equals("")) {
+            PrintWriter out = res.getWriter();
+            out.println("이메일을 입력해주세요");
+            out.println("<input type=\"button\" onclick=\"history.back()\" value=\"뒤로\">");
+            return;
+        }
 
 
         //Connection 과 Statement null 로 초기화
@@ -92,7 +117,16 @@ public class SingUpMemberProcessorServlet extends HttpServlet {
             }
 
         } catch (SQLException | ServletException e) {
-            e.printStackTrace();
+
+
+            PrintWriter out = res.getWriter();
+            //out.println(e.getMessage());
+            String exceptionMessage = e.getMessage();
+            if (exceptionMessage.indexOf("Duplicate") > -1 ) {
+                out.println("이미 등록된 아이디입니다. 다른 아이디를 사용해주세요");
+                out.println("<input type=\"button\" onclick=\"history.back()\" value=\"뒤로\">");
+            }
+
             //DB 닫기
         } finally {
             if (pstmt != null) {

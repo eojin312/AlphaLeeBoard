@@ -32,6 +32,8 @@
 </form>
 
 <input type="button" onclick="history.back()" value="취소">
+<a href="/alphalee">홈으로 가기</a>
+
 
 </body>
 
