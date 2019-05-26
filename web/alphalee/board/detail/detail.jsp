@@ -12,8 +12,36 @@
 </head>
 <body>
 
-보여줄 게시글 번호는 ${articleNo}
-<input type="button" onclick="history.back()" value="뒤로가기">
+<table border="1">
+    <tr>
+        <td>작성자</td>
+        <td>${article.writer}</td>
+    </tr>
+    <tr>
+        <td>글 제목</td>
+        <td>${article.title}</td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>${article.contents}</td>
+    </tr>
+    <tr>
+        <td>생성일자</td>
+        <td>${article.createDate}</td>
+    </tr>
+    <tr>
+        <td>변경일자</td>
+        <td>${article.updateDate}</td>
+    </tr>
+    <tr>
+        <td>조회수</td>
+        <td>${article.readCount}</td>
+    </tr>
+    <tr>
+        <td>추천 수</td>
+        <td>${article.recommendCount}</td>
+    </tr>
+</table><input type="button" onclick="history.back()" value="뒤로가기">
 
 <a href="/alphalee/board/list">글 목록</a>
 

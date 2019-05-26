@@ -21,9 +21,9 @@ public class Article {
     public Article() {
     }
 
-    public Article(long articleNo, String writer, String contents, String createDate, String updateDate, long readCount, long recommendCount, String title) {
-        this.title = title;
+    public Article(long articleNo, String title, String writer, String contents, String createDate, String updateDate, long readCount, long recommendCount) {
         this.articleNo = articleNo;
+        this.title = title;
         this.writer = writer;
         this.contents = contents;
         this.createDate = createDate;
