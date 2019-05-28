@@ -45,7 +45,7 @@
 
 <a href="/alphalee/board/list">글 목록</a>
 
-<a href="/alphalee/board/update?artice_no=${articleNo}">글 수정하기</a>
+<a href="/alphalee/board/update?article_no=${article.articleNo}">글 수정하기</a>
 <a href="/alphalee">홈으로 가기</a>
 
 </body>

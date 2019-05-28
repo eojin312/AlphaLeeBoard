@@ -66,6 +66,10 @@ public class Article {
         return contents.replaceAll("\r\n", "<br>");
     }
 
+    public String getContentsWithReturn() {
+        return this.contents;
+    }
+
 
 
 

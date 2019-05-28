@@ -45,4 +45,13 @@
         <url-pattern>/alphalee/board/detail</url-pattern>
     </servlet-mapping>
 
+    <!--게시판 글 수정-->
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <servlet-class>servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/alphalee/board/update</url-pattern>
+    </servlet-mapping>
 </web-app>
