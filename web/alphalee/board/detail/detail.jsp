@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!doctype html>
 <html>
 <head>
     <title>Title</title>
@@ -45,6 +46,10 @@
 
 <a href="/alphalee/board/list">글 목록</a>
 
+<form action="/alphalee/board/recommendcount/update" name="recommend_count_form" id="recommend_count_form" method="post">
+    <input type="hidden" id="article_no" name="article_no" value="${article.articleNo}">
+    <input type="submit" name="update_recommend_count" value="추천하기">
+</form>
 <a href="/alphalee/board/update?article_no=${article.articleNo}">글 수정하기</a>
 <a href="/alphalee">홈으로 가기</a>
 

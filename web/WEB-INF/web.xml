@@ -54,4 +54,14 @@
         <servlet-name>Update</servlet-name>
         <url-pattern>/alphalee/board/update</url-pattern>
     </servlet-mapping>
+
+    <!--게시판 추천 수 업데이트 처리-->
+    <servlet>
+        <servlet-name>UpdateRecommendCount</servlet-name>
+        <servlet-class>servlet.UpdateRecommendCountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateRecommendCount</servlet-name>
+        <url-pattern>/alphalee/board/recommendcount/update</url-pattern>
+    </servlet-mapping>
 </web-app>
