@@ -10,6 +10,24 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        a:visited {
+            color: lightslategray;
+        }
+        ul li {
+            list-style: none;
+            float: left;
+            border-right: 1px solid gold ;
+            margin-left: 20px;
+        }
+        .tool {
+            align:center;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -42,16 +60,20 @@
         <td>추천 수</td>
         <td>${article.recommendCount}</td>
     </tr>
-</table><input type="button" onclick="history.back()" value="뒤로가기">
 
-<a href="/alphalee/board/list">글 목록</a>
+</table>
+<div class="tool">
+<ul>
+    <li><input type="button" onclick="history.back()" value="뒤로가기" style="width: 60px; height: 100px;"></li>
+    <li><a href="/alphalee/board/list">글 목록</a></li>
+    <li><a href="/alphalee">홈으로 가기</a></li>
+</ul>
+<a href="/alphalee/board/update?article_no=${article.articleNo}">글 수정하기</a>
 
 <form action="/alphalee/board/recommendcount/update" name="recommend_count_form" id="recommend_count_form" method="post">
     <input type="hidden" id="article_no" name="article_no" value="${article.articleNo}">
     <input type="submit" name="update_recommend_count" value="추천하기">
 </form>
-<a href="/alphalee/board/update?article_no=${article.articleNo}">글 수정하기</a>
-<a href="/alphalee">홈으로 가기</a>
-
+</div>
 </body>
 </html>
