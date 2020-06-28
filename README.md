@@ -34,8 +34,8 @@ OS에 상관없이 byte코드를 실행할 수 있다.
 SQL
 -> Standard Query Language
 
-RDB
-->관계형 데이터베이스
+RDBMS
+-> 관계형 데이터베이스
 
 1. mysql 설치
 2. 쿼리 연습
