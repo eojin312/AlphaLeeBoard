@@ -30,6 +30,7 @@ OS에 상관없이 byte코드를 실행할 수 있다.
 - war로 묶어서 돌려보기도
 
 **DB도 알아야한다!!**
+
 SQL
 -> Standard Query Language
 RDB
